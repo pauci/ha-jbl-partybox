@@ -1,0 +1,222 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Vyberte reproduktor. Musí byť v dosahu Bluetooth adaptéra alebo proxy.",
+        "data": {
+          "mac": "Reproduktor"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Nastaviť {name}?"
+      }
+    },
+    "abort": {
+      "already_configured": "Tento reproduktor je už nastavený.",
+      "no_devices_found": "Nenašiel sa žiadny JBL PartyBox. Skontrolujte, či je v dosahu Bluetooth adaptéra alebo proxy.",
+      "not_supported": "Toto zariadenie nie je podporovaný JBL PartyBox."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "plugged_in": {
+        "name": "Napájanie zo siete"
+      },
+      "auracast": {
+        "name": "Auracast"
+      },
+      "mic_input": {
+        "name": "Vstup mikrofónu {number}"
+      }
+    },
+    "light": {
+      "light_show": {
+        "name": "Svetelná šou",
+        "state_attributes": {
+          "effect": {
+            "state": {
+              "rock": "Rock",
+              "neon": "Neon",
+              "club": "Club",
+              "flow": "Flow",
+              "ripple": "Ripple",
+              "cross": "Cross",
+              "flash": "Flash",
+              "custom": "Vlastný",
+              "loop": "Loop",
+              "bounce": "Bounce",
+              "trim": "Trim",
+              "switch": "Switch",
+              "freeze": "Freeze"
+            }
+          }
+        }
+      }
+    },
+    "switch": {
+      "light_ring": {
+        "name": "Svetlo okolo reproduktorov"
+      },
+      "light_dots": {
+        "name": "Bodové svetlá"
+      },
+      "light_strobe": {
+        "name": "Stroboskop"
+      },
+      "light_strips": {
+        "name": "Biele svetelné pásy"
+      },
+      "feedback_tone": {
+        "name": "Zvuková odozva"
+      },
+      "child_lock": {
+        "name": "Zámok panela"
+      }
+    },
+    "select": {
+      "equalizer": {
+        "name": "Ekvalizér",
+        "state": {
+          "jbl_signature": "JBL Signature",
+          "movie": "Film",
+          "vocal": "Vokály",
+          "chill": "Chill",
+          "custom": "Vlastný"
+        }
+      },
+      "bass_boost": {
+        "name": "Zosilnenie basov",
+        "state": {
+          "off": "Vypnuté",
+          "deep": "Hlboké",
+          "punchy": "Údernejšie"
+        }
+      },
+      "usb_mode": {
+        "name": "Port USB-A",
+        "state": {
+          "usb_playback": "Prehrávanie z USB a nabíjanie",
+          "easysing_mics": "Mikrofóny JBL EasySing"
+        }
+      }
+    },
+    "number": {
+      "mic_volume": {
+        "name": "Hlasitosť mikrofónu"
+      },
+      "mic_bass": {
+        "name": "Basy mikrofónu"
+      },
+      "mic_treble": {
+        "name": "Výšky mikrofónu"
+      },
+      "mic_echo": {
+        "name": "Ozvena mikrofónu"
+      },
+      "eq_band": {
+        "name": "Vlastný ekvalizér, pásmo {band}"
+      }
+    },
+    "button": {
+      "horn": {
+        "name": "Klaksón"
+      },
+      "pac_man": {
+        "name": "Pac-Man"
+      },
+      "thumbs_up": {
+        "name": "Palec hore"
+      },
+      "thumbs_down": {
+        "name": "Palec dole"
+      },
+      "scratch_1": {
+        "name": "Scratch 1"
+      },
+      "scratch_2": {
+        "name": "Scratch 2"
+      },
+      "scratch_3": {
+        "name": "Scratch 3"
+      },
+      "clap": {
+        "name": "Tlieskanie"
+      },
+      "lets_go": {
+        "name": "“Let's go”"
+      },
+      "hands_up": {
+        "name": "“Hands up”"
+      },
+      "hey": {
+        "name": "“Hey”"
+      },
+      "party": {
+        "name": "“Party!”"
+      },
+      "jump": {
+        "name": "“Jump”"
+      }
+    }
+  },
+  "exceptions": {
+    "no_response": {
+      "message": "Reproduktor neodpovedá. Môže byť v pohotovostnom režime, alebo je k nemu pripojená aplikácia JBL PartyBox."
+    },
+    "command_failed": {
+      "message": "Príkaz zlyhal: {error}"
+    },
+    "entry_not_loaded": {
+      "message": "Položka JBL PartyBox nie je načítaná."
+    }
+  },
+  "services": {
+    "dj_effect": {
+      "name": "DJ efekt",
+      "description": "Na chvíľu zapne filter z Effect Lab, ako keď v aplikácii podržíte jeho posuvník.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Reproduktor",
+          "description": "JBL PartyBox, ktorý sa má použiť."
+        },
+        "effect": {
+          "name": "Efekt",
+          "description": "Ktorý filter použiť."
+        },
+        "level": {
+          "name": "Úroveň",
+          "description": "Sila, 1 až 4."
+        },
+        "duration": {
+          "name": "Trvanie",
+          "description": "Ako dlho efekt držať."
+        }
+      }
+    }
+  },
+  "selector": {
+    "dj_effect": {
+      "options": {
+        "repeater": "Repeater",
+        "filter": "Filter",
+        "gater": "Gater",
+        "echo": "Echo",
+        "wipeout": "Wipeout"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti",
+        "data": {
+          "stay_connected": "Zostať pripojený"
+        },
+        "data_description": {
+          "stay_connected": "Udržiavať Bluetooth spojenie s reproduktorom, kým je zapnutý. Príkazy reagujú okamžite a zmeny na reproduktore sa zobrazia hneď, ale aplikácia JBL PartyBox sa zatiaľ nepripojí."
+        }
+      }
+    }
+  }
+}

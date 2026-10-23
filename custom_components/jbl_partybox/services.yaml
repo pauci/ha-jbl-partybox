@@ -1,0 +1,33 @@
+dj_effect:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: jbl_partybox
+    effect:
+      required: true
+      selector:
+        select:
+          translation_key: dj_effect
+          options:
+            - repeater
+            - filter
+            - gater
+            - echo
+            - wipeout
+    level:
+      default: 4
+      selector:
+        number:
+          min: 1
+          max: 4
+          step: 1
+    duration:
+      default: 2
+      selector:
+        number:
+          min: 0.2
+          max: 30
+          step: 0.1
+          unit_of_measurement: s

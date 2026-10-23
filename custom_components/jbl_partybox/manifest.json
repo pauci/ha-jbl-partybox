@@ -1,0 +1,19 @@
+{
+  "domain": "jbl_partybox",
+  "name": "JBL PartyBox",
+  "bluetooth": [
+    {
+      "service_data_uuid": "0000fddf-0000-1000-8000-00805f9b34fb",
+      "connectable": false
+    }
+  ],
+  "codeowners": ["@pauci"],
+  "config_flow": true,
+  "dependencies": ["bluetooth_adapters"],
+  "documentation": "https://github.com/pauci/ha-jbl-partybox",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/pauci/ha-jbl-partybox/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

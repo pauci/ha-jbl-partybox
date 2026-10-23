@@ -1,0 +1,222 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "description": "Choose the speaker. It has to be in range of a Bluetooth adapter or proxy.",
+        "data": {
+          "mac": "Speaker"
+        }
+      },
+      "bluetooth_confirm": {
+        "description": "Set up {name}?"
+      }
+    },
+    "abort": {
+      "already_configured": "This speaker is already set up.",
+      "no_devices_found": "No JBL PartyBox found. Make sure it is in range of a Bluetooth adapter or proxy.",
+      "not_supported": "This device is not a supported JBL PartyBox."
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "plugged_in": {
+        "name": "Mains power"
+      },
+      "auracast": {
+        "name": "Auracast"
+      },
+      "mic_input": {
+        "name": "Mic input {number}"
+      }
+    },
+    "light": {
+      "light_show": {
+        "name": "Light show",
+        "state_attributes": {
+          "effect": {
+            "state": {
+              "rock": "Rock",
+              "neon": "Neon",
+              "club": "Club",
+              "flow": "Flow",
+              "ripple": "Ripple",
+              "cross": "Cross",
+              "flash": "Flash",
+              "custom": "Custom",
+              "loop": "Loop",
+              "bounce": "Bounce",
+              "trim": "Trim",
+              "switch": "Switch",
+              "freeze": "Freeze"
+            }
+          }
+        }
+      }
+    },
+    "switch": {
+      "light_ring": {
+        "name": "Speaker ring light"
+      },
+      "light_dots": {
+        "name": "Dot lights"
+      },
+      "light_strobe": {
+        "name": "Strobe"
+      },
+      "light_strips": {
+        "name": "White light strips"
+      },
+      "feedback_tone": {
+        "name": "Feedback tone"
+      },
+      "child_lock": {
+        "name": "Panel lock"
+      }
+    },
+    "select": {
+      "equalizer": {
+        "name": "Equalizer",
+        "state": {
+          "jbl_signature": "JBL Signature",
+          "movie": "Movie",
+          "vocal": "Vocal",
+          "chill": "Chill",
+          "custom": "Custom"
+        }
+      },
+      "bass_boost": {
+        "name": "Bass boost",
+        "state": {
+          "off": "Off",
+          "deep": "Deep",
+          "punchy": "Punchy"
+        }
+      },
+      "usb_mode": {
+        "name": "USB-A port",
+        "state": {
+          "usb_playback": "USB playback and charging",
+          "easysing_mics": "JBL EasySing mics"
+        }
+      }
+    },
+    "number": {
+      "mic_volume": {
+        "name": "Mic volume"
+      },
+      "mic_bass": {
+        "name": "Mic bass"
+      },
+      "mic_treble": {
+        "name": "Mic treble"
+      },
+      "mic_echo": {
+        "name": "Mic echo"
+      },
+      "eq_band": {
+        "name": "Custom EQ band {band}"
+      }
+    },
+    "button": {
+      "horn": {
+        "name": "Horn"
+      },
+      "pac_man": {
+        "name": "Pac-Man"
+      },
+      "thumbs_up": {
+        "name": "Thumbs up"
+      },
+      "thumbs_down": {
+        "name": "Thumbs down"
+      },
+      "scratch_1": {
+        "name": "Scratch 1"
+      },
+      "scratch_2": {
+        "name": "Scratch 2"
+      },
+      "scratch_3": {
+        "name": "Scratch 3"
+      },
+      "clap": {
+        "name": "Clap"
+      },
+      "lets_go": {
+        "name": "“Let's go”"
+      },
+      "hands_up": {
+        "name": "“Hands up”"
+      },
+      "hey": {
+        "name": "“Hey”"
+      },
+      "party": {
+        "name": "“Party!”"
+      },
+      "jump": {
+        "name": "“Jump”"
+      }
+    }
+  },
+  "exceptions": {
+    "no_response": {
+      "message": "The speaker doesn't respond. It may be in standby, or the JBL PartyBox app is connected to it."
+    },
+    "command_failed": {
+      "message": "Command failed: {error}"
+    },
+    "entry_not_loaded": {
+      "message": "The JBL PartyBox entry is not loaded."
+    }
+  },
+  "services": {
+    "dj_effect": {
+      "name": "DJ effect",
+      "description": "Applies an Effect Lab filter for a while, like holding its slider in the app.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Speaker",
+          "description": "The JBL PartyBox to use."
+        },
+        "effect": {
+          "name": "Effect",
+          "description": "Which filter to apply."
+        },
+        "level": {
+          "name": "Level",
+          "description": "Strength, 1 to 4."
+        },
+        "duration": {
+          "name": "Duration",
+          "description": "How long to hold the effect."
+        }
+      }
+    }
+  },
+  "selector": {
+    "dj_effect": {
+      "options": {
+        "repeater": "Repeater",
+        "filter": "Filter",
+        "gater": "Gater",
+        "echo": "Echo",
+        "wipeout": "Wipeout"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "stay_connected": "Stay connected"
+        },
+        "data_description": {
+          "stay_connected": "Keep the Bluetooth link to the speaker open while it is on. Commands react instantly and changes made on the speaker show up live, but the JBL PartyBox app can't connect at the same time."
+        }
+      }
+    }
+  }
+}
